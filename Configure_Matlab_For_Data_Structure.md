@@ -3,7 +3,6 @@
 * Once your directory structure looks good (see [link] Setup_Project_Directory_Structure), obtain the `get_TAB_project_configuration.m` function, and put it in the `<projectPath>/Matlab` directory. 
 
 * Edit `get_TAB_project_configuration.m`, by entering projectName (user-preferred name, this is not used for processing).
-[XXX new filename get_TAB_project_configuration.m]
 
 ```
 function structProject = get_TAB_project_configuration.m(projectPath)
@@ -19,7 +18,7 @@ structProject.matlabPath	= fullfile(structProject.path,'Matlab');
 
 * Matlab is now ready to run data processing and cleaning for that particular project.
 
-* Finally, the “best-practice” approach for each project is to have one “main” script for data processing (e.g. `mainDataCleaning_My_MicrometSites.m` [XXX think about filename: e.g. My_MicrometSites_CleaningMain.m]). This script should contain all the steps that are needed to go from raw data to the final gap-filled Ameriflux “clean” data set:
+* Finally, the “best-practice” approach for each project is to have one “main” script for data processing (e.g. `mainDataCleaning_My_MicrometSites.m` [XXX think about filename: e.g. My_MicrometSites_CleaningMain.m?]). This script should contain all the steps that are needed to go from raw data to the final gap-filled Ameriflux “clean” data set:
 1. Obtaining/downloading the raw data; 
 2. Creating the database in the appropriate format (see section [XXX link]);
 3. Applying the data-cleaning stages (see section [XXX link]).
@@ -29,8 +28,6 @@ With that “main” script the entire data processing is documented and it can 
 [XXX add example of main matlab script from TPAG? replace example later with EddyPro specific files]
 
 At this point, your Matlab directory should contain the following files:
-
-[XXX edit figure with new filename]
 
 <img src="images/directory_trees/DirectoryTree4.jpg" alt="DirectoryTree:MatlabDirectory" width="400"/>
 

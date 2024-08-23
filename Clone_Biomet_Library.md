@@ -1,8 +1,8 @@
 ## Clone the Biomet.net library Git repository to your local computer
 
-[XXX software is not edited by user; configuration files are edited to interface with Biomet library as far as possible - add this info someone]
-
 The [Biomet.net repository](https://github.com/ubc-micromet/Biomet.net) contains libraries of computer code (in matlab, R, python, etc.) related to running the data cleaning pipeline. It contains (a) the scripts to run the first, second, and third cleaning stages, as well as conversion to AmeriFlux format, and also (b) many functions to help analyse and visualise data throughout all the stages of data processing and cleaning.
+
+In principle, users should not need to edit this code library. Instead, as far as possible, you will interface with it using various configuration files unique to your own project(s), described later. 
 
 #### To clone the Biomet.net repository from a terminal:
 

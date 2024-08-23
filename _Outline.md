@@ -17,7 +17,7 @@ Principles:
 5. Install Software: R/RStudio
 6. Install Software: Python (optional)
 7. Data Cleaning Principles
-8. Set up project directory structure
+8. Set up project directory structure (Zoran/Rosie discussed up to here, 23 Aug 2024)
 9. Configure Matlab for Data Structure
 10. Create Database from Raw Data and Inspect Output
 11. Obtain Necessary Sample, Configuration, and Standardization Files
