@@ -1,31 +1,20 @@
 ## Create your INI Files for Data Cleaning 
 
-The INI files for a given site dictate how data is transferred from its raw format into a standardized, cleaned, and gap-filled format that can be used for scientific analysis. They provide instructions to a set of MATLAB and R scripts used to process data. The INI files are unique to each site because not every site is set up in exactly the same way (different sensors, loggers, record lengths, etc.). The files are separated into three stages according to each data cleaning stage.
+[XXX This long section definitely needs numbered subsections]
 
-Before starting to create your own INI files, you **must** have completed sections [XXX add section numbers once finalized, or link all sections - though there are a lot of bitesize steps before this one now]. Additionally, here are some programming rules that you must follow for the INI files to be successfully read by the pipeline scripts:
+### What are INI files?
+The INI files for a given site dictate how data is transferred from its raw format into a standardized, cleaned, and gap-filled format that can be used for scientific analysis. They provide instructions to a set of MATLAB and R scripts used to process data. The INI files are unique to each site because not every site is set up in exactly the same way (different sensors, loggers, record lengths, etc.). 
 
-#### Programming Rules for First and Second stage INI files:
-```
-[XXX not sure if this belongs here or elsewhere]
-1. We enforce using uppercase for site IDs to avoid problems between running data cleaning on Mac vs. Windows.
-2. All traces must be enclosed in [Trace] and [End] blocks.
-3. All assignments can be on multiple lines, but should be enclosed in single quotes.
-4. Comments must begin with a percentage sign (%).
-5. All fields must be in Matlab format.
-6. All parameter assignments must be to strings in single quotes, or numeric expressions, e.g., threshold_const = 6, threshold_const = [6], variableName = 'Some Name'.
-7. For the first stage, the partial path must be included with the inputFileName when you locate the raw data trace in the database. (Using biomet_path function only returns the path: year/site/measType/)
-8. First stage necessary fields are: variableName, inputFileName, measurementType, units, title, and minMax.
-9. Second stage necessary fields are: variableName, title, units.
-```
+The files are separated into three stages according to each data cleaning stage. Before starting to create your own INI files, you **must** have completed sections [XXX add section numbers once finalized, or link all sections - though there are a lot of bitesize steps before this one now]. 
 
-To help you create and edit your own site-specific INI files, we present a working example for cleaning data from the Delta Salt Marsh (DSM) flux site in British Columbia [XXX revisit once sample site is decided upon]. You should already have obtained all the sample files for this site and put them in the appropriate locations [XXX link to Obtain_Sample_Config_Standardization_Files.md].
+To help you create and edit your own site-specific INI files, throughout the instructions we refer to a working example that cleans data from the Delta Salt Marsh (DSM) flux site in British Columbia [XXX revisit once sample site is decided upon]. You should already have obtained all the sample files for this site??? and put them in the appropriate locations [XXX link to Obtain_Sample_Config_Standardization_Files.md].
 
-### Working example for Delta Salt Marsh (siteID: DSM)
+### Instructions to create your own INI files:
 
 #### *First Stage INI file*
 These are the steps to create your first stage INI (which generally requires the most work of the three stages):
 * Create first stage cleaning INI file from template using createFirstStageIni [XXX discuss this with Zoran, vs. duplicating DSM INI and renaming].
-* Name your INI file using the unique measurement site ID, e.g., siteID = ‘DSM’ INI file is named DSM_FirstStage.ini.
+* Name your INI file using the unique measurement site ID, e.g., SITE-ID = ‘DSM’ INI file is named DSM_FirstStage.ini.
 * Edit first stage INI file adding *just a few variables at a time*, keeping in mind the following, as well as the data cleaning principles previously outlined [XXX link to Data_Cleaning_Principles section?]:
 
     1. Select traces that are needed for future data analysis. Not all the measured variables from a site need to be here, only the ones that will be used in future analysis or those needed to improve cleaning, such as diagnostic variables.
@@ -45,7 +34,7 @@ These are the steps to create your first stage INI (which generally requires the
     | Field | Description | Type |
     | ----- | ----------- | ---- |
     | yearIn | year to clean data for | integer |
-    | siteID | measurement site ID, e.g., DSM | string uppercase |
+    | SITE-ID | measurement site ID, e.g., DSM | string uppercase |
     | cleaning stage to run | 1 = first stage, 2 = second stage, 7 = third stage, 8 = convert to AmeriFlux CSV file | integer |
 
 * For example, to run first stage cleaning for the DSM site for 2022, you would type: `fr_automated_cleaning(2022,'DSM',1)`.
@@ -61,14 +50,14 @@ These are the steps to create your first stage INI (which generally requires the
 | Difference_GMT_to_local_time | Time difference between GMT time, that database is kept in, and the standard time at the site location. `local_time+Difference_GMT_to_local_time -> GMT time`. |
 |[Trace] | Marks the beginning of a new variable. The section has to end with the keyword `[End]`.|
 | variableName | Name of variable for first stage, following the Ameriflux naming convention. The variable with this name will show up in the subfolder “Clean” under the same folder where the original database file came from. |
-| title | Descriptive title for plots/visualization.|
-| originalVariable [XXX remove?]| This is an example of adding an optional field to a trace that can be used by an advanced user. Here it’s set to be the same as the variableName. Currently, this particular field is not used for generic processing. |
-|inputFileName |{`inputFileName`} The name of the database file that contains data for this trace. The brackets are mandatory.<br /> The file name can include folder(s), e.g., `'Met/Tair'`, and the paths are relative to the main site path (`./Database/yyyy/siteID`), so the above example translates into this filepath: `'./Database/yyyy/siteID/Met/Tair'`.<br />Over the lifetime of a measurement site, the data logger programs can change and a sensor measurement that was assigned to a variable may change. To allow for different variable names over the site history the inputFileName can be given as: {`'inputFileName1','inputFileName2'`}. In this case, the parameter `inputFileName_dates` must be present and reflect this (see next parameter description).<br /> Advanced: if there is a need to load up a data file from an alternative site, the path can be constructed as follows: `../../siteID2/dataFolder`. This syntax `../../` moves the path pointer up two directory levels to `/Database/yyyy` and from there `siteID2/dataFolder` takes the program to the correct folder.|
+| title | Descriptive variable name for plots/visualization.|
+|inputFileName |{`inputFileName`} The name of the database file that contains data for this trace. The brackets are mandatory.<br /> The file name can include folder(s), e.g., `'Met/Tair'`, and the paths are relative to the main site path (`./Database/yyyy/SITE-ID`), so the above example translates into this filepath: `'./Database/yyyy/SITE-ID/Met/Tair'`.<br />Over the lifetime of a measurement site, the data logger programs can change and a sensor measurement that was assigned to a variable may change. To allow for different variable names over the site history the inputFileName can be given as: {`'inputFileName1','inputFileName2'`}. In this case, the parameter `inputFileName_dates` must be present and reflect this (see next parameter description).<br /> Advanced: if there is a need to load up a data file from an alternative site, the path can be constructed as follows: `../../SITE-ID2/dataFolder`. This syntax `../../` moves the path pointer up two directory levels to `/Database/yyyy` and from there `SITE-ID2/dataFolder` takes the program to the correct folder.|
 |inputFileName_dates |`[datenum_start1 datenum_end1; datenum_start2 datenum_end2]` The start and end dates of data periods for each of the inputFileNames, using the Matlab `datenum` function. <br />If there are multiple inputFileNames per the example in the previous parameter description, e.g., {`'inputFileName1','inputFileName2'`} then the program needs to know the time periods when the data assigned to the variableName should come from `inputFileName1`, and when from `inputFileName2`. In that case, this field is mandatory.<br /> If the inputFileName parameter contains only one file name, this inputFileName_dates parameter is optional, but it is still a good practice to use it anyway for documentation purposes and in case other filenames are added in the future.<br /> The last `datenum_end` is usually set far into the future, e.g., `datenum(2999,1,1)`.| 
-|measurementType| Usually `'Met'` or `'Flux'` (must be of Matlab type char). Mandatory parameter that sets the input and output trace folders. The input folder defaults to: `siteID/measurementType/inputFileName`. If relative paths are used [XXX used where?] they "assume" that the current folder is `siteID/measurementType` so the relative path is referenced to that [XXX unsure what this sentence means]. The output folder for the first stage cleaned trace is always `siteID/measurementType/Clean`. <br />Note: the measurementType must *not* be missing (empty), otherwise the data will be saved to `siteID/Clean/variableName` which is incorrect and will cause errors in future cleaning stages.|
+|measurementType| Usually `'Met'` or `'Flux'` (must be of Matlab type char). Mandatory parameter that sets the input and output trace folders. The input folder defaults to: `SITE-ID/measurementType/inputFileName`. If relative paths are used [XXX used where?] they "assume" that the current folder is `SITE-ID/measurementType` so the relative path is referenced to that [XXX unsure what this sentence means]. The output folder for the first stage cleaned trace is always `SITE-ID/measurementType/Clean`. <br />Note: the measurementType must *not* be missing (empty), otherwise the data will be saved to `SITE-ID/Clean/variableName` which is incorrect and will cause errors in future cleaning stages.|
 |units|Measurement units for this trace, must be data type char. Important!|
 |instrument|The name of the sensor that measures this trace, e.g., `'HMP155A'`|
 |instrumentSN|Serial number of the sensor, if available.|
+|Evaluate | Optional user defined function. Examples: can be used to derive variables from available data; in flag variables to remove bad data; or for calculating new useful variables, e.g., `Evaluate = 'global_potential_radiation = potential_radiation(clean_tv,<lat>,<lon>);'`. See sample file `DSM_FirstStage.ini` for more use cases.|
 |loggedCalibration|Used together with currentCalibration (see next parameter). If you need to change the linear calibration for the trace, these coefficients are used to convert the trace values from engineering units to its original/raw units. Then the correct calibration coefficients (currentCalibration) are used. This can also be used to change the units. The format is `[gain offset startDatenum endDatenum]`, where `startDatenum` and `endDatenum` refer to the time span that this particular set of coefficients should be applied. For example, with no change for data starting on 1 January 2020, the code would read `loggedCalibration = [1 0 datenum(2020,1,1) datenum(2999,1,1)]`. You can apply multiple calibrations to different time periods, separated by semicolons.<br /> Note: all calibration values need to be on the same line of code, i.e., no line-breaks are allowed in the INI file!|
 |currentCalibration|Correct(ed) linear calibration coefficients. Used together with loggedCalibrations (see notes for previous parameter for more details). |
 |comments|Any useful comments relating to this trace and its handling in the INI file, such as why certain flags are applied.|
@@ -79,16 +68,13 @@ These are the steps to create your first stage INI (which generally requires the
 |[End]|Marks the end of the trace properties section.|
 
 **Note:**
-Other properties that a user wants to use later on in their own programs (or in the “Evaluate” statements in the second stage INI) can be added to each of the traces. The function that processes the INI files (read_ini_files.m) will add the property and its assigned value to the trace structure but the rest of the Trace Analysis programs will ignore it. The user can then parse the trace info in their own programs (or within “Evaluate” statements) and take advantage of this feature.<br />
+Other properties that a user wants to use later on in their own programs (or in the “Evaluate” statements) can be added to each of the traces. The function that processes the INI files (read_ini_files.m) will add the property and its assigned value to the trace structure but the rest of the Trace Analysis programs will ignore it. The user can then parse the trace info in their own programs (or within “Evaluate” statements) and take advantage of this feature.<br />
 
-
-
-[XXX Move description of tags and global variables (maybe everything beneath this comment) to separate section? This section is getting long...]
 
 ##### Tags for Dependent Variables
 As mentioned in the "dependent" parameter description, you can use the tags feature to ensure that your INI file "catches" all common dependent variables. This feature utilizes the Biomet library Matlab function `tags_Standard.m`.  You should list the tag in the dependent field for it to work. 
 
-For example, given the standard tags, if you put `'tag_H2O_All'` in the dependent field for a trace, all traces listed under that tag will then be a dependent of that trace. Tags can refer to other tags. You can also create site-specific custom tags by creating a `siteID_CustomTags.m`, making sure to follow the same format as the tags in `tags_Standard.m` (see section XXX for the location where this optional file should live). 
+For example, given the standard tags, if you put `'tag_H2O_All'` in the dependent field for a trace, all traces listed under that tag will then be a dependent of that trace. Tags can refer to other tags. You can also create site-specific custom tags by creating a `SITE-ID_CustomTags.m`, making sure to follow the same format as the tags in `tags_Standard.m` (see section XXX for the location where this optional file should live). 
 
 Tags in your site-specific custom file will overwrite tags of the same name in the `tags_Standard.m` file, and Matlab will warn you that this is occurring (by beeping and writing out a message to the screen).
 
@@ -96,9 +82,9 @@ Tags in your site-specific custom file will overwrite tags of the same name in t
 ##### Global Variables
 
  *Global Variables*
-At the top of the sample first stage INI file that you obtained (`DSM_FirstStage.ini` XXX check site name once decided), you will notice sections with headers containing "Global Variables". To simplify entering and editing the required parameters into the first stage INI file there is an option to apply the same setting to many traces at once, using this global variables feature. These are always defined at the beginning of the INI file. (Note: only the main body of your INI file, not your "include files", should have global variables.)
+At the top of the sample first stage INI file that you obtained (`DSM_FirstStage.ini` XXX check site name once decided), you will notice sections with headers containing "Global Variables". To simplify entering and editing the required parameters into the first stage INI file there is an option to apply the same setting to many traces at once, using this global variables feature. These are always defined at the beginning of the INI file. (Note: only the main body of your INI file, not your "include files", should have global variables [XXX include files not mentioned yet...])
  
-The main advantage that this provides is an option of having a standard set of variables defined in the template files that can be loaded into each site-specific INI file using the `#include` statement. [XXX FYI to a newer user, I don't think it's clear how this part is an advantage and these are linked at this point]
+The main advantage that this provides is an option of having a standard set of variables defined in the template files that can be loaded into each site-specific INI file using the `#include` statement. [XXX FYI to a newer user, I don't think it's clear how this part is an advantage and these are linked at this point... however, global variables appear at the top of the INI file so do they need explaining first?]
 
 Another advantage is that you can apply changes to multiple traces all at once if needed, by making only one edit at the top of the file. Then you do not risk missing out a trace needed the same edit, so long as it is referenced correctly. 
 
@@ -115,31 +101,44 @@ There are three types of global variables, as follows:
 4. Cycles through all the `globalVars.Instrument` fields and creates or overwrites the fields.
 5. Cycles through all the `globalVars.Trace` fields and creates or overwrites the fields.
  
-Example:
+*Trace-specific* example:
 * In the INI file, the trace "CH4" has the field `currentCalibration` set to empty: `currentCalibration = []`
 * There is a global variable for the same trace with the correct `currentCalibration` field:
 `globalVars.Trace.CH4.currentCalibration = [1000 0 datenum(2021,1,1) datenum(2999,1,1)]`
 * The final result is that the field `currentCalibration` for the trace "CH4" gets set to: `currentCalibration = [1000 0 datenum(2021,1,1) datenum(2999,1,1)]`.
  
 
-For the instrument-specific global variables, each trace has an `instrumentType` field. Currently we use five default instrument types (six if we consider an empty field `[]` as a type):
-* LI7200
-* LI7700
-* Anemometer
-* EC
-* otherTraces. 
+For the *instrument-specific* global variables, each trace has an `instrumentType` field. Currently we use five default instrument types (six if we consider an empty field `[]` as a type): LI7200, LI7700, Anemometer, EC, and otherTraces. 
 
-You can also create your own unique sensor option for instrumentType, if you need to apply a setting to multiple traces. If `otherTraces` is enabled (`otherTraces.Enable = 1`) these settings are applied to all the traces not defined under any other groups, or the ones that have `instrumentType=[]`. Future improvements to global variables include adding a MET type.
+You can also create your own unique sensor option for instrumentType, if you need to apply a setting to multiple traces. If `otherTraces` is enabled (`otherTraces.Enable = 1`) these settings are applied to all the traces not defined under any other groups, or the ones that have `instrumentType=[]`. Future improvements to global variables include adding a MET type [XXX does this need including for the user?]
 
 For the third type of global variable, e.g., `globalVars.other`, currently you can use this to carry out single-point interpolation, for cases where only one half-hourly data point is missing:
 ```
 globalVars.other.singlePointInterpolation = 'on'  % 'no_interp' - skip interpolation [default], 'on' - do single missing point interpolation for all traces
 ```
 
+##### Adding **`include` files to your First Stage INI file**
+
+In section [XXX 12_Obtain_Sample_Config_Standardization_Files.md] we introduced `include` files and how to obtain them. These files define a standard set of variables that can be loaded into your first stage INI file. Specifically, the files relate to EddyPro output and radiation components. [XXX relate to global variables...]
+
+* `EddyPro_Common_FirstStage_include.ini`: includes traces common to EddyPro output, listed in EddyPro file output order;
+* `EddyPro_LI7200_FirstStage_include.ini`: when an LI-7200 IRGA is being used, this file adds LI-7200 specific traces, listed in EddyPro file output order;
+* `EddyPro_LI7500_FirstStage_include.ini`: when an LI-7500 IRGA is being used, this file adds LI-7500 specific traces, listed in EddyPro file output order;
+* `EddyPro_LI7500_FirstStage_include.ini`: when an LI-7500 IRGA is being used, this file adds LI-7500 specific traces, listed in EddyPro file output order;
+* `RAD_FirstStage_include.ini`: includes radiation components. 
+
+To include any of these files, add the following line of code to the very bottom of your first stage INI file: `#include <relevant_file>_include.ini`. If you are using more than one, put them on multiple lines of code, still at the very bottom of the INI file, as follows:
+```
+#include EddyPro_Common_FirstStage_include.ini
+#include EddyPro_LI7200_FirstStage_include.ini
+#include RAD_FirstStage_include.ini
+```
+
+
 #### *Second Stage INI file*
 
 The steps to create your first stage INI are very similar to the first stage:
-* Duplicate the `DSM_SecondStage.ini` file you obtained then rename it with you unique measurement site ID, e.g., `mySiteID_SecondStage.ini` (you should have already completed this step [XXX link to Obtain_Sample_Config_Standardization_Files.md]).
+* Duplicate the `DSM_SecondStage.ini` file you obtained then rename it with your unique measurement site ID, e.g., `MySITE-ID_SecondStage.ini` (you should have already completed this step [XXX link to Obtain_Sample_Config_Standardization_Files.md]).
 * Edit second stage INI file adding *just a few variables at a time* (as with the first stage) and then testing, so it’s easy to diagnose errors/typos. Pay attention to the output in your Matlab command window, it is informative and highlights any issues and where they occur. Recall the data cleaning principles previously outlined [XXX link to Data_Cleaning_Principles section?] and make sure your traces align with the second stage principles.
 
 #### Second stage main features:
@@ -163,9 +162,52 @@ The steps to create your first stage INI are very similar to the first stage:
 [Add DSM_SecondStage.INI file image or link to file for downloading]
 
 #### Second Stage INI file Properties
+
 | Field      | Description |
+| ----------- | ----------- |
+| **XXX Which of these first six fields are actually used/necessary?**
+| Site_name   | Name of the site. Any text can go here.        |
+| SiteID      | This is the name attributed to the site in the database (e.g., DSM or BB). |
+| input_path  | This can stay blank |
+| output_path | The local output path?  **Example says leave blank?** |
+| high_level_path | leave blank:{}. It used to indicate Met/Flux, etc.|
+| searchPath  | All traces on this path(s) will be loaded up and available in the SecondStage cleaning. Syntax: use 'auto' or use specific folders to limit or to expand the (example: 'Flux\Clean,Met\Clean,Flags\Clean'). When option 'auto' is used, all the traces created by the FirstStage cleaning will be automatically loaded before the SecondStage cleaning starts. |
+|[Trace] | Marks the beginning of a new variable. The section has to end with the keyword <[End]>.|
+| variableName | Name of variable for second stage, again following Ameriflux format. The variable with the name created here will show up in the `/Database/yyyy/SITE-ID/Clean/SecondStage` folder, where `yyyy` is the year that the data is valid for. |
+| Evaluate | User defined function.  If no function is applied, default input will just pass the variable from the first stage to the second stage, e.g.,  `Evaluate = 'TKE = TKE;'`.  Use the `calc_avg_trace` function (described above) to average or gap-fill met variables (such as air temperature) with values from secondary measurements or nearby sites (you will need to load these into the first stage before using them in this second stage). See sample file `DSM_SecondStage.ini` for more use cases.|
+| title | Descriptive variable name for plots/visualization. |
+| units | Units for this current trace, e.g. `'W/m^2'`|
 
 Once you have added a few variables to the second stage INI, test it using the following Matlab command:
-`fr_automated_cleaning(yearIn,siteID,[1 2])`
+`fr_automated_cleaning(yearIn,SITE-ID,[1 2])`
 Alternatively, if you already ran the first stage, you can simply run:
-`fr_automated_cleaning(yearIn,siteID,2)`.
+`fr_automated_cleaning(yearIn,SITE-ID,2)`.
+
+**Note for first and second stage:** [XXX not sure if this belongs here or elsewhere] Here are some programming rules that you must follow for the INI files to be successfully read by the pipeline scripts:
+
+```
+Programming Rules for First and Second stage INI files:
+
+1. We enforce using uppercase for site IDs to avoid problems between running data cleaning on Mac vs. Windows.
+2. All traces must be enclosed in [Trace] and [End] blocks.
+3. All assignments can be on multiple lines, but should be enclosed in single quotes.
+4. Comments must begin with a percentage sign (%).
+5. All fields must be in Matlab format.
+6. All parameter assignments must be to strings in single quotes, or numeric expressions, e.g., threshold_const = 6, threshold_const = [6], variableName = 'Some Name'.
+7. For the first stage, the partial path must be included with the inputFileName when you locate the raw data trace in the database. (Using biomet_path function only returns the path: /year/SITE-ID/measType/)
+8. First stage necessary fields are: variableName, inputFileName, measurementType, units, title, and minMax.
+9. Second stage necessary fields are: variableName, title, units.
+```
+
+
+#### *Third Stage INI file*
+
+XXX add content
+
+
+#### *Output to Ameriflux CSV file*
+Finally, once you have inspected your clean data and are happy with your INI files, you can output the data to a CSV file formatted for submission to Ameriflux:
+`fr_automated_cleaning(yearIn,SITE-ID,[1 2 7 8])`.
+
+In case you do not want/need to rerun the cleaning (the third stage can be computationally expensive), simply:
+`fr_automated_cleaning(yearIn,SITE-ID,8)`.

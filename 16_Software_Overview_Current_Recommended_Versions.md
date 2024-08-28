@@ -12,12 +12,15 @@ Some users may also need **Python** installed [link to Install_Python.md].
 
 #### Recommended Software Versions:
 
-Updated on blah 2024 (XXX update!)
+Updated on: blah 2024 (XXX update!)
 
-* As of March 2024 we recommend using Matlab version 2023b (2024a?) so that functionality is transferable across all platforms. 
-* As of May 2024 we recommend R v4.3.3 and RStudio version XXX.
-* Python version 3.9.6 for Mac, default as of 3 February 2024 (is this the best one, also what is Python needed for?)
-* Git version??
+| Software | Recommended version as of above date |
+| -------- | ------------------- |
+| Matlab   | 2023b / 2024a?      |
+| R        | v4.3.3              |
+| RStudio  | ?                   |
+| Python   | 3.9.6 for Mac?      |
+| Git      | Latest available (see link in 2_Install_Git_Create_Account_Optional.md)   |
 
 Your computer/system administrators should be able to help you with all these installations if necessary. 
 

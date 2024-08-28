@@ -7,7 +7,7 @@ Principles:
 
 ## Outline
 
-[Suggested order (per Zoran/Rosie discussion on 19 Aug 2024) still under evaluation!]
+[Suggested order (per Zoran/Rosie discussion on 19 Aug 2024) still under evaluation! Will add relevant subsection/figure numbering once the order is (mostly) finalized...]
 
 1. Motivation: The Importance of Flux Data Standardization and Reproducibility 
 2. Install Software: Git, and Create Github account (optional)
