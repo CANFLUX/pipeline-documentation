@@ -1,0 +1,3 @@
+##  Python Installation on your local computer (optional)
+
+This step is optional. Python is necessary for running high-frequency data reprocessing, described [here](https://github.com/CANFLUX/EddyPro_API/blob/main/README.md). Otherwise you can skip this step. 

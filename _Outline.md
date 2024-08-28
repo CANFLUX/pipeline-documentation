@@ -9,22 +9,22 @@ Principles:
 
 [Suggested order (per Zoran/Rosie discussion on 19 Aug 2024) still under evaluation!]
 
-0. [Intro section] Motivation: The Importance of Flux Data Standardization and Reproducibility 
-1. Install Software: Git, and Create Github account (optional)
-2. Clone Biomet.net Library
-3. Install Software: Matlab
-4. Configure Matlab for Biomet.net
-5. Install Software: R/RStudio
-6. Install Software: Python (optional)
-7. Data Cleaning Principles
-8. Set up project directory structure (Zoran/Rosie discussed up to here, 23 Aug 2024)
-9. Configure Matlab for Data Structure
-10. Create Database from Raw Data and Inspect Output
-11. Obtain Necessary Sample, Configuration, and Standardization Files
-12. Create Your Own INI files
-13. Data visualization
-14. Troubleshooting
-15. Software Overview and Current Recommended Versions
-16. Other?
+1. Motivation: The Importance of Flux Data Standardization and Reproducibility 
+2. Install Software: Git, and Create Github account (optional)
+3. Clone Biomet.net Library
+4. Install Software: Matlab
+5. Configure Matlab for Biomet.net
+6. Install Software: R/RStudio
+7. Install Software: Python (optional)
+8. Data Cleaning Principles
+9. Set Up Project Directory Structure (Zoran/Rosie discussed up to here, 23 Aug 2024)
+10. Configure Matlab for Data Structure
+11. Create Database from Raw Data and Inspect Output
+12. Obtain Necessary Sample, Configuration, and Standardization Files
+13. Create Your Own INI files
+14. Data visualization
+15. Troubleshooting
+16. Software Overview and Current Recommended Versions
+17. Other?
 
 
