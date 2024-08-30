@@ -1,5 +1,7 @@
 # Data Cleaning Pipeline Documentation and Instructions
 
+--> Added this content to `README.md`, so this outline appears on the main repo webpage and can link from there... (this file can be deleted eventually)
+
 Principles:
 -	Why we need cleaning_procedures
 -	How to process your sci data
