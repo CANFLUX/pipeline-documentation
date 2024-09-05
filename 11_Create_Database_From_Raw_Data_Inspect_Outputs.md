@@ -12,11 +12,11 @@ This is the most “site-specific” part of the process, aside from the creatin
 5. `fr_SoilFluxPro_database` (create database from SoilFluxPro output data);
 6. `fr_TOA5_database` (create database from TOA5 Campbell Scientific ASCII files).
 
-* The relevant function, when run in matlab, will create subdirectories named by data year (`yearIn`), then by `SITE-ID` (i.e., SITE-IDs are grouped by year), as follows:
+* The relevant function, when run in matlab, will create subdirectories named by data year (`yearIn`), then by `SITEID` (i.e., SITEIDs are grouped by year), as follows:
     
     <img src="images/directory_trees/DirectoryTree5.jpg" alt="DirectoryTree:DatabaseDirectory&Subdirectories" width="400"/>
 
- * The SITE-ID subdirectories will be populated with data (e.g., `Flux` and `Met` if these data types exist) for the appropriate year, stored as binary files ready for cleaning. The green highlighting in figure XXX shows an example with three years of data from two different sites.
+ * The SITEID subdirectories will be populated with data (e.g., `Flux` and `Met` if these data types exist) for the appropriate year, stored as binary files ready for cleaning. The green highlighting in figure XXX shows an example with three years of data from two different sites.
 
 * The `clean_tv` file, which will be located in each Raw/Clean folder, is a standardized time vector of 30-minute frequency. This formats the timestamp of each record in Local Standard Time (LST; as required by AmeriFlux). [XXX it is still not clear to me exactly how this file is created...]
 
