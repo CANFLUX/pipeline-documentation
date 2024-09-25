@@ -9,4 +9,4 @@
 * Installation instructions for RStudio on Windows and Mac: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
 
 * Next, install the following libraries in RStudio by running the `install.packages(“”)` command, as follows:
-`install.packages(c('REddyProc','ggplot','fs','yaml','rlist','dplyr','lubridate','data.table','tidyverse','caret','ranger','zoo',’randomForest’))`
+`install.packages(c('REddyProc','fs','yaml','rlist','data.table','tidyverse','caret','ranger','zoo','randomForest'))`
