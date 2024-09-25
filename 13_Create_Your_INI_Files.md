@@ -76,7 +76,7 @@ These are the steps to create your first stage INI (which generally requires the
 |minMax|`[min max]` Minimum and maximum numerical thresholds for filtering. The values *outside* of this range will be set to NaN.|
 |clamped_minMax|`[cMin cMax]` Similar to minMax but instead of setting the data points outside the range to NaN, it truncates their value to the cMin or cMax. (e.g., RH: [0 100]).<br />Note: this parameter is not mandatory, however, when used, please make sure that the minMax property boundaries are wider than the boundaries of clamped_minMax because the minMax property is applied first. This parameter is useful for variables such as relative humidity, e.g., `minMax = [-1 110]` used with `clamped_minMax=[0 100]`.|
 |zeroPt| Value to indicate missing data. Many programs nowadays use -9999 to indicate bad/missing data points.|
-|dependent|Filter-dependent variables based on specified trace. The current trace can have multiple dependents that need to be separated by commas, e.g., `dependent = 'trace1','trace2','trace3'`.<br />For example, when using the LI-7200 pump, all the traces that depend on the LI-7200 are dependent on the pump trace. So, for the LI-7200: `dependent = 'CO2','H2O'`. Then the CO2 trace should have `dependent = 'FC',...` and so on. You can write these out manually where necesssary but we highly recommend using the "tags" feature for common dependencies [XXX link to subsection on tags]. Avoid circular references, i.e.,  CO2: `dependent = 'FC'` together with FC: `dependent = 'CO2'` is bad!|
+|dependent|Filter-dependent variables based on specified trace. The current trace can have multiple dependents that need to be separated by commas, e.g., `dependent = 'trace1','trace2','trace3'`.<br />For example, when using the LI-7200 pump, all the traces that depend on the LI-7200 are dependent on the pump trace. So, for the LI-7200: `dependent = 'CO2','H2O'`. Then the CO2 trace should have `dependent = 'FC',...` and so on. You can write these out manually where necesssary but we highly recommend using the "tags" feature for common dependencies [XXX link to subsection on tags]. Avoid circular references, i.e.,  CO2: `dependent = 'FC'` together with FC: `dependent = 'CO2'` is bad! [XXX is it?!]|
 |[End]|Marks the end of the trace properties section.|
 
 <br>
@@ -87,7 +87,7 @@ Other properties that a user wants to use later on in their own programs (or in 
 
 
 ##### Tags for Dependent Variables
-As mentioned in the "dependent" parameter descriptionin the properties table, you can use the tags feature to ensure that your INI file "catches" all common dependent variables. This feature utilizes the Biomet library function `tags_Standard.m`.  You should list the relevant tag in the dependent field for it to work. 
+As mentioned in the "dependent" parameter description in the properties table, you can use the tags feature to ensure that your INI file "catches" all common dependent variables. This feature utilizes the Biomet library function `tags_Standard.m`.  You should list the relevant tag in the dependent field for it to work. 
 
 For example, given the standard tags, if you put `'tag_H2O_All'` in the dependent field for a trace, all traces listed under that tag will then be a dependent of that trace. Tags can refer to other tags. You can also create site-specific custom tags by creating a `SITEID_CustomTags.m`, making sure to follow the same format as the tags in `tags_Standard.m` (see section XXX for the location where this optional file should live). 
 
