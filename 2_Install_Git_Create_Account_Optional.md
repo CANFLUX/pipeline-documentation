@@ -1,4 +1,4 @@
-## Install Git and create personal Github account (optional)
+## 2. Install Git and create personal Github account (optional)
 
 This step is optional. It is useful if you think you may contribute to the Biomet.net library, which is a Git repository. 
 

@@ -1,4 +1,4 @@
-## Motivation: The Importance of Flux Data Standardization and Reproducibility
+## 1. Motivation: The Importance of Flux Data Standardization and Reproducibility
 
 [XXX Intro section with manifesto on standardization and reproducibility]
 

@@ -1,4 +1,4 @@
-## Data Cleaning Principles
+## 8. Data Cleaning Principles
 
 This section outlines the data cleaning principles and processes that should be followed closely and applied at each of the three stages, as well as other relevant information.
 
@@ -22,4 +22,4 @@ This section outlines the data cleaning principles and processes that should be 
 * **Principle: filtering [XXX check with Sara if 3rd stage includes any filtering], partitioning, and gap filling for flux variables**.
 * The third stage collects the stage two data and applies filtering and gap filling procedures to the flux data. For this we use the R [REddyProc](https://bg.copernicus.org/articles/15/5015/2018/bg-15-5015-2018.html) package which has been adapted to interface with Matlab, so that all three stages can be run together.
 
-We achieve these principles by setting up various configuration files used in each stage. This process is described later [XXX link to INI file section], but there are a few more steps to complete before that. Next, you will set up your project directory structure.
+We achieve these principles by setting up various configuration files used in each stage. This process is described later [XXX link to INI file section], but there are a few more steps to complete before that. Next, you will set up your project directory structure, then configure it to work with the Biomet.net library.
