@@ -1,5 +1,7 @@
 ## Create Database from Raw Data and Inspect Outputs
 
+[Long version]
+
 This is the most “site-specific” part of the process, aside from the creating the first stage files (section [XXX link to create INI files]). Each flux site is unique with its own sensors, data loggers, and data archiving formats (EddyPro output files, TOA5 Campbell Sci files, Ameriflux CSV files, to name a few). The purpose of this step is to convert from such a site-specific dataset to a generic dataset ready to be processed using the standardised libraries (i.e., `Biomet.net`). As mentioned in section [XXX link to Data_Cleaning_Principles.md], these "generic" binary files can be read by most computer languages, by design, meaning they are suitable for the Biomet library which contains code written in Matlab, R, and Python. 
 
 ### Instructions for creating your own "generic" dataset:
