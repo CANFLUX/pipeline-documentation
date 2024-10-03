@@ -1,8 +1,6 @@
 ## 9. &nbsp; Quick Start Set Up: Project Directory Structure and Matlab Configuration
 
-This section provides a quick-start summary of section 10a and 10b (see section 10 [XXX link] for a more detailed description of these steps).
-
-Your project path is the file path to the root of your project folder. For example, if the name of your project is "My_Microsites", the project path might look like: 
+This section provides a quick-start summary of sections 10a and 10b (see section 10 [XXX link] for a more detailed description of these steps). You need the file path to your project root folder for these next steps. For example, if the name of your project is "My_Microsites", the project path might look like: 
 ```
 projectPath = '/Users/<name>/Projects/My_MicrometSites/'
 ```
@@ -25,12 +23,12 @@ projectPath = '/Users/<name>/Projects/My_MicrometSites/'
 
 3. Next, run `set_TAB_project('<projectPath>')`. This process sets up the `Biomet.net` toolbox to work with your project. 
 
-### 9.2 &nbsp; Short description of directory structure and contents
+### 9.2 &nbsp; Short description of new directory structure and contents
 
-Only the new directories and files necessary to begin data cleaning are described here. For the long description see section 10 [xxx link].
+Only the new directories and files necessary to get to this point and begin data cleaning are described here. For the long description see section 10 [xxx link].
 
 #### Database directory
-* The new `Database` directory contains `Calculation_Procedures`, and within `Calculation_Procedures`, there is one called `TraceAnalysis_ini`. 
+* The new `Database` directory contains a `Calculation_Procedures` directory, and within `Calculation_Procedures`, there is one called `TraceAnalysis_ini`. 
 
 * Within `TraceAnalysis_ini`, you will see a subdirectory named using your SITEID (`SITEID1` in this example), as follows:
 
@@ -50,6 +48,8 @@ Only the new directories and files necessary to begin data cleaning are describe
     <img src="images/directory_trees/DirectoryTree3.jpg" alt="DirectoryTree:SitesDatabaseDirectory&Subdirectories" width="250"/>
 
 #### Matlab directory
-More details on the `<projectPath>/Matlab` directory are provided in the next section on configuring Matlab to work with the data structure [XXX link to Configure_Matlab_For_Data_Structure.md]. If everything appears as described above, then you can now move on to that section.
+* This directory should now contain three matlab files: (1) `get_TAB_project_configuration.m` which was created in step 2 above, then used in step 3; (2) `biomet_database_default.m`; and (3) `biomet_sites_default.m`. If you run either of the latter two on your command line in Matlab, you will see that it returns the full file path to either your Database or your Sites directory, respectively. These functions are used in the pipeline behind the scenes, and will also be useful to you later, when you want to visualize your data.
+
+More details on the `<projectPath>/Matlab` directory are provided in section 10b [XXX link] on configuring Matlab to work with the data structure. 
 
 XXX Add short version of create database contents somewhere... here? new section?

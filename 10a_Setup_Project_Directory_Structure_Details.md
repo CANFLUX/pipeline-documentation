@@ -11,7 +11,7 @@ We provide you with a function as part of the Biomet library to help you set it 
 **Important notes**: 
 * We enforce using *uppercase* for site IDs, to avoid problems between running data cleaning on Mac vs. Windows. Examples: the Delta Salt Marsh site ID is `DSM`; the Turkey Point Agriculture site ID is `TPAG`.
 * Site IDs *must* also be a valid Matlab variable name: they should start with a letter, can only be alphanumeric, and are allowed to contain underscores but nothing else (no hyphens), e.g., `PE_TNR`. 
-* Your `<projectPath>`, which you will need when following the instructions, is the full filepath to your `Project` root directory. E.g., for the FLUXNET-Canada-V2.0 project, the project path would be similar to `/Users/<username>/FLUXNET-Canada-V2.0/` .
+* Your `<projectPath>`, which you will need when following the instructions, is the full filepath to your `Project` root directory. E.g., for the FLUXNET-Canada-V2.0 project, the project path would be similar to `/Users/<username>/Projects/FLUXNET-Canada-V2.0/` .
 
 #### Instructions to create the correct directory structure:
 
