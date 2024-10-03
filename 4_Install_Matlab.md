@@ -1,4 +1,4 @@
-## 4. Install Matlab on your local computer
+## 4. &nbsp; Install Matlab on your local computer
 
 Currently, it is necessary to use Matlab to run the data cleaning scripts. 
 

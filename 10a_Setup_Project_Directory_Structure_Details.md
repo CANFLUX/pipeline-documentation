@@ -1,4 +1,4 @@
-## 10a. Set Up Project Directory Structure
+## 10a. &nbsp; Set Up Project Directory Structure
 
 **If you followed the quick-start set up in section 9, you should skip this section.** 
 

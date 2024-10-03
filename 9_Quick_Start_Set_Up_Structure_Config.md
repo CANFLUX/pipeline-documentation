@@ -48,7 +48,7 @@ Only the new directories and files necessary to get to this point and begin data
     <img src="images/directory_trees/DirectoryTree3.jpg" alt="DirectoryTree:SitesDatabaseDirectory&Subdirectories" width="250"/>
 
 #### Matlab directory
-* This directory should now contain three matlab files: (1) `get_TAB_project_configuration.m` which was created in step 2 above, then used in step 3; (2) `biomet_database_default.m`; and (3) `biomet_sites_default.m`. If you run either of the latter two on your command line in Matlab, you will see that it returns the full file path to either your Database or your Sites directory, respectively. These functions are used in the pipeline behind the scenes, and will also be useful to you later, when you want to visualize your data.
+* This directory should now contain three matlab files: (1) `get_TAB_project_configuration.m` which was created "behind the scenes" in step 2 above, then used in step 3; (2) `biomet_database_default.m`; and (3) `biomet_sites_default.m`. These functions are used in the pipeline behind the scenes, and will also be useful to you later, when you want to visualize your data.
 
 More details on the `<projectPath>/Matlab` directory are provided in section 10b [XXX link] on configuring Matlab to work with the data structure. 
 

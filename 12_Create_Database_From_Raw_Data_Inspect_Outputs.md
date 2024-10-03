@@ -1,4 +1,4 @@
-## Create Database from Raw Data and Inspect Outputs
+## 12. &nbsp; Create Database from Raw Data and Inspect Outputs
 
 **If you followed the quick-start database creation in section 11, you should skip this section, unless you have more raw data with a different format to convert.** 
 

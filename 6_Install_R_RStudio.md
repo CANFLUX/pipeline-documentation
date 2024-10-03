@@ -1,4 +1,4 @@
-## 6. Install R and RStudio on your local computer
+## 6. &nbsp; Install R and RStudio on your local computer
 
 * As with all the other software installations for use in data cleaning, first check which versions are recommended at present [link to Software_Overview_Current_Recommended_Versions.md].
 

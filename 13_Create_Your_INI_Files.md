@@ -1,6 +1,6 @@
-## Create your INI Files for Data Cleaning 
+## 13. &nbsp; Create your INI Files for Data Cleaning 
 
-[XXX This long section definitely needs numbered subsections]
+[XXX In Progress]
 
 [XXX is outlier detection worth mentioning here as feature, and if so, where?]
 

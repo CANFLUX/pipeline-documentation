@@ -1,4 +1,4 @@
-## 5. Configure Matlab for Biomet.net library
+## 5. &nbsp; Configure Matlab for Biomet.net library
 
 Before completing this step, you must have the Biomet.net repository cloned to your local computer [link to Clone_Biomet_Library.md]. This step is important for ensuring the pipeline scripts and tools run successfully on your local computer. 
 

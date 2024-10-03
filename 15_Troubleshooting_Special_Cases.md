@@ -1,4 +1,11 @@
-## Troubleshooting, Special Cases, and FAQ
+## 15. &nbsp; Troubleshooting, Special Cases, and FAQ
+
+[XXX In Progress]
+
+#### Troubleshooting
+
+* When running data cleaning (any stage), pay very close attention to the output on your screen. It tells you when everything runs smoothly, and if it does not, in most cases it will be informative as to why and whereabouts things went wrong. 
+* One potential recurring error comes from having extra white space in your INI file between `[TRACE]` and `[END]`. Each parameter must be defined on a new line, with no wraparound. We recommend using a text editor that has line numbers (such as VS Code) to help you avoid and/or diagnose this issue.
 
 
 #### Special Cases
@@ -20,4 +27,3 @@ This section outlines some recurring special cases and how to deal with them:
 * add UBC-specific cases?
 * add INI file specific cases, e.g., flags, etc.
 
-XXX not complete

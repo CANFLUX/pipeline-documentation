@@ -1,4 +1,4 @@
-## 8. Data Cleaning Principles
+## 8. &nbsp; Data Cleaning Principles
 
 This section outlines the data cleaning principles and processes that should be followed closely and applied at each of the three stages, as well as other relevant information.
 

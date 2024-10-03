@@ -9,7 +9,7 @@ gui_Browse_Folder(pth)
 ```
 This function opens a Matlab app that looks in the Flux folder for SITEID1 for a specific year (as defined in the `biomet_path` function input parameters) and plots each variable in turn. You can scroll through or use the dropdown in order to check that your data looks reasonable and as expected. 
 
-2. Load one trace, e.g. co2_mixing_ratio and plot it. This example 
+2. Load one trace, e.g., co2_mixing_ratio and plot it. This example 
 ```
 %% Load one trace and plot it
 pth = biomet_path(yearIn,'SITEID','Flux');   
