@@ -3,26 +3,58 @@
 ## Data Cleaning Pipeline Documentation and Instructions
 
 Compiled by: Rosie Howard, 2024\
-Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members\
+Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members
 
 ### Outline
+<ol>
+<li>Motivation: The Importance of Flux Data Standardization and Reproducibility</li> <br>
+<li>Software Installation</li><br>
 
-1. Motivation: The Importance of Flux Data Standardization and Reproducibility 
-2. Install Software: Git, and Create Github account (optional)
-3. Clone Biomet.net Library
-4. Install Software: Matlab
-5. Configure Matlab for Biomet.net
-6. Install Software: R/RStudio
-7. Install Software: Python (optional)
-8. Data Cleaning Principles
-9. Set Up Project Directory Structure
-10. Configure Matlab for Data Structure
-11. Create Database from Raw Data and Inspect Output
-12. Obtain Necessary Sample, Configuration, and Standardization Files
-13. Create Your Own INI files
-14. Data Visualization
-15. Troubleshooting, Special Cases, and FAQ
-16. Software Overview and Current Recommended Versions
-17. Other?
+2.1 Install Software: Git, and Create Github account (optional)
+
+2.2 Clone Biomet.net Library
+
+2.3 Install Software: Matlab
+
+2.4 Configure Matlab for Biomet.net
+
+2.5 Install Software: R/RStudio
+
+2.6 Install Software: Python (optional)
+
+<li> Data Cleaning Principles</li><br>
+<li> Set Up Project Directory Structure and Configure Matlab</li><br>
+
+4.1 Quick Start: Directory Structure and Matlab Configuration
+
+4.2 Full Documentation: Set Up Project Directory Structure
+
+4.3 Full Documentation: Configure Matlab for Data Structure
+
+<li>Create Database from Raw Data and Visualize Contents</li><br>
+
+5.1 Quick Start: Create Database
+
+5.2 Full Documentation: Create Database
+
+<li>Create Your Own INI Files for Data Cleaning</li><br>
+
+6.1 Quick Start: Create First Stage INI file
+
+6.2 Full Documentation: First Stage INI file, Global Variables, Include Files, and Tags
+
+6.3 Quick Start: Second Stage INI...
+
+6.4 ...
+
+<li> Data Visualization Apps</li><br>
+
+<li>Troubleshooting, FAQ, and Recommended Software Versions</li><br>
+
+8.1 Troubleshooting and FAQ
+
+8.2 Software: Current Recommended Versions
+
+</ol>
 
 

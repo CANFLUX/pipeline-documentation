@@ -1,4 +1,4 @@
-## 14. &nbsp; Data Visualization 
+## 7. &nbsp; Data Visualization Apps
 
 [XXX In Progress]
 
