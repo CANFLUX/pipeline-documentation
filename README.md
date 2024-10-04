@@ -41,11 +41,15 @@ Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, 
 
 6.1 Quick Start: Create First Stage INI file
 
-6.2 Full Documentation: First Stage INI file, Global Variables, Include Files, and Tags
+6.2 Quick Start: Second Stage INI...
 
-6.3 Quick Start: Second Stage INI...
+6.3 Quick Start: Third Stage and Ameriflux Output
 
-6.4 ...
+6.4 Full Documentation: First Stage INI file, Global Variables, Include Files, and Tags
+
+6.5 Full Documentation: Second Stage INI
+
+6.6 Full Documentation: Third Stage and Ameriflux Output
 
 <li> Data Visualization Apps</li><br>
 
