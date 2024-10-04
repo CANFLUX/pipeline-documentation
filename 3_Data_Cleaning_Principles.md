@@ -4,6 +4,8 @@ This section outlines the data cleaning principles and processes that should be 
 
 <img src="images/principles/Database_Workflow_Principles_v2.jpg" alt="DataCleaningPrinciplesSummary" width="500"/>
 
+*Figure 3. Chart outlining the data cleaning principles followed in the pipeline.*
+
 [XXX discuss wording in figure with Sara]
 
 ### Stage 1 
