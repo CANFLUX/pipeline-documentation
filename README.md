@@ -2,14 +2,10 @@
 
 ## Data Cleaning Pipeline Documentation and Instructions
 
-Principles:
--	Why we need cleaning_procedures
--	How to process your sci data
--	... [XXX Zoran, is this part needed now I added section on motivation, or did you mean for this to include something else?]
+Compiled by: Rosie Howard, 2024\
+Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members\
 
 ### Outline
-
-[Suggested order (per Zoran/Rosie discussion on 19 Aug 2024) still under evaluation! Will add relevant subsection/figure numbering once the order is (mostly) finalized...]
 
 1. Motivation: The Importance of Flux Data Standardization and Reproducibility 
 2. Install Software: Git, and Create Github account (optional)
