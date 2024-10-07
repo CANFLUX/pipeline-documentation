@@ -3,7 +3,7 @@
 ## Data Cleaning Pipeline Documentation and Instructions
 
 Compiled by: Rosie Howard, 2024\
-Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members
+Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members and affiliates.
 
 ### Outline
 
