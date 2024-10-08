@@ -11,5 +11,5 @@ Include/emphasize why this is a good way compared with their usual way - same as
 [XXX Rosie see notes for adding content here]
 
 **Note:** 
-Throughout this documentation, you will see figures with directory tree diagrams to help you ensure your folders are set up correctly. Note that <mark style="background-color: lightgreen">directory paths are highlighted in green</mark>, and <mark style="background-color: lightblue">files are highlighted in blue</mark>. [XXX add html to match exact colour used in images]
-[XXX this note may fit better elsewhere, also not necessarily true yet! - will work on this formatting once things are more complete]
+[XXX remove this maybe]
+Throughout this documentation, you will see figures with directory tree diagrams and Matlab code. Note that <mark style="background-color: lightgreen">directory paths are highlighted in green</mark>, <mark style="background-color: yellow">necessary edits are highlighted in yellow</mark>, and <mark style="background-color: #FFE5B4">edits that you may need to make are highlighted in peach</mark>. [XXX add html to match exact colour used in images]
