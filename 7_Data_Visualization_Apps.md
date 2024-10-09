@@ -14,7 +14,7 @@ Functions for visualizing data*:
 
 2. In your console, edit and enter the following (note that you can also create an R script with the code below and run the R script):
 
-    a. `source("/Users/<username>/Code/local_data_cleaning/Projects/EcoFlux/Database/Calculation_Procedures/RShiny_flux_plots_ini/EcoFlux_ini.R")` [XXX does it matter where the INI and xlsx files are stored so long as they are sourced properly here?]
+    a. `source("/Users/<username>/Code/local_data_cleaning/Projects/EcoFlux/Database/Calculation_Procedures/RShiny_flux_plots_ini/EcoFlux_ini.R")` [XXX does it matter where the INI and xlsx files are stored so long as they are sourced properly here?] no just create plotting INI file in their cal_proc directory
 
     b.
     `source("/Users/<username>/Biomet.net/R/RShiny_flux_plots/load_save_data.R")`
