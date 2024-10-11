@@ -25,6 +25,7 @@ Edits and contributions from: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, 
 &emsp;4.3 &nbsp;Full Documentation: Configure Matlab for Data Structure
 
 5. Create Database from Raw Data and Visualize Contents\
+&emsp;5.0 &nbsp;Quick Start: EddyPro Processing Parameters\
 &emsp;5.1 &nbsp;Quick Start: Create Database\
 &emsp;5.2 &nbsp;Full Documentation: Create Database
 

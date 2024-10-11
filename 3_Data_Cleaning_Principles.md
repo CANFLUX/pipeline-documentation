@@ -6,12 +6,12 @@ This section outlines the data cleaning principles and processes that should be 
 
 *Figure 3. Chart outlining the data cleaning principles followed in the pipeline.*
 
-[XXX discuss wording in figure with Sara]
+<!-- [XXX discuss wording in figure with Sara] -->
 
 ### Stage 1 
-* **Principle: during the first stage of data cleaning we want to keep the best measured data values *from each sensor***, i.e., a user looking for the best measurements from a particular sensor would want to use the first stage data. Missing data points for periods of more than one half-hour will not be gap-filled in any way (note that one missing half-hourly data point can be interpolated linearly, see section XXX for details). 
+* **Principle: during the first stage of data cleaning we want to keep the best measured data values *from each sensor***, i.e., a user looking for the best measurements from a particular sensor would want to use the first stage data. Missing data points for periods of more than one half-hour will not be gap-filled in any way. <!-- (note that one missing half-hourly data point can be interpolated linearly, see section XXX for details). -->
 
-* In summary, the first stage collects the raw data, applies min/max filtering, assigns consistent variable names in line with [Ameriflux guidelines](https://ameriflux.lbl.gov/data/aboutdata/data-variables/) as far as possible, and moves the relevant files to a `Clean` folder in preparation for stage two. This folder will be created automatically if it does not already exist. 
+* In summary, the first stage collects the raw data, applies min/max filtering, assigns consistent variable names in line with <a href="https://ameriflux.lbl.gov/data/aboutdata/data-variables/" target="_blank" rel="noopener noreferrer">Ameriflux guidelines</a> as far as possible, and moves the relevant files to a `Clean` folder in preparation for stage two. This folder will be created automatically if it does not already exist. 
 
 * The data are stored as binary files in "single-precision floating-point format" (aka float 32), which importantly means they are readable in most common computer languages and softwares.
 
@@ -21,7 +21,7 @@ This section outlines the data cleaning principles and processes that should be 
 * In practice, the second stage collects the stage one data, generates the "best" observation for each variable and moves the relevant files to a "Clean/SecondStage" folder in preparation for stage three.
 
 ### Stage 3 
-* **Principle: filtering [XXX check with Sara if 3rd stage includes any filtering], partitioning, and gap filling for flux variables**.
-* The third stage collects the stage two data and applies filtering and gap filling procedures to the flux data. For this we use the R [REddyProc](https://bg.copernicus.org/articles/15/5015/2018/bg-15-5015-2018.html) package which has been adapted to interface with Matlab, so that all three stages can be run together.
+* **Principle: partitioning, u-star filtering, and gap filling for flux variables**.
+* The third stage collects the stage two data and applies filtering and gap filling procedures to the flux data. For this we use the R <a href="https://bg.copernicus.org/articles/15/5015/2018/bg-15-5015-2018.html" target="_blank" rel="noopener noreferrer">REddyProc</a> package which has been adapted to interface with Matlab, so that all three stages can be run together.
 
-We achieve these principles by setting up various configuration files used in each stage. This process is described later [XXX link to INI file section], but there are a few more steps to complete before that. Next, you will set up your project directory structure, then configure it to work with the Biomet.net library.
+We achieve these principles by setting up various configuration files used in each stage. This process is described later (section 6), but there are a few more steps to complete before that. Next, you will set up your project directory structure, then configure it to work with the Biomet.net library.
