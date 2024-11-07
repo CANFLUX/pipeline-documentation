@@ -28,7 +28,7 @@ Revisions:\
 3. Data Cleaning Principles
 
 <!-- 4. Set Up Project Directory Structure and Configure Matlab\ -->
-&emsp;4 &nbsp;Quick Start: Project Directory Structure\
+&emsp;4.1 &nbsp;Quick Start: Project Directory Structure\
 
 <!-- &emsp;4.1 &nbsp;Quick Start: Directory Structure and Matlab Configuration\
 &emsp;4.2 &nbsp;Full Documentation: Set Up Project Directory Structure\
