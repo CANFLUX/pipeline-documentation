@@ -43,19 +43,21 @@ Revisions:
 
 <!-- 6. Create Your Own INI Files for Data Cleaning\ -->
 
-6. Quick Start: Create INI Files for Data Cleaning\
+6. Quick Start Tutorial: Create INI and Other Configuration Files for Data Cleaning\
 &emsp;6.1 &nbsp;Quick Start: First Stage INI File\
 &emsp;6.2 &nbsp;Quick Start: Second Stage INI File\
 &emsp;6.3 &nbsp;Quick Start: Third Stage and Ameriflux Output
-<!-- &emsp;6.4 &nbsp;Full Documentation: First Stage INI file, Global Variables, Include Files, and Tags\
-&emsp;6.5 &nbsp;Full Documentation: Second Stage INI\
-&emsp;6.6 &nbsp;Full Documentation: Third Stage and Ameriflux Output -->
 
-7. Data Visualization\
-&emsp;7.1 &nbsp;Matlab plotApp\
-&emsp;7.2 &nbsp;R-Shiny App
+7. Full Documentation: INI and Configuration Files - Details and Features\
+&emsp;7.1 &nbsp;Full Documentation: First Stage INI file, Global Variables, Include Files, and Tags\
+&emsp;7.2 &nbsp;Full Documentation: Second Stage INI\
+&emsp;7.3 &nbsp;Full Documentation: Third Stage and Ameriflux Output
 
-8. Troubleshooting and FAQ\
-&emsp;8.1 &nbsp;Recommended Software Versions
-<!--&emsp;8.2 &nbsp;Recommended Software Versions-->
+8. Data Visualization\
+&emsp;8.1 &nbsp;Matlab plotApp\
+&emsp;8.2 &nbsp;R-Shiny App
+
+9. Troubleshooting and FAQ\
+&emsp;9.1 &nbsp;Recommended Software Versions\
+&emsp;9.2 &nbsp;Recommended Software Versions
 

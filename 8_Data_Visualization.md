@@ -1,4 +1,4 @@
-## 7. &nbsp; Data Visualization Apps
+## 8. &nbsp; Data Visualization Apps
 
 <link rel="stylesheet" href="css/style.css">
 
