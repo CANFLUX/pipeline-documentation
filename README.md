@@ -6,6 +6,7 @@ Compiled by: Rosie Howard, 2024\
 Edits and contributions: Zoran Nesic, Sara Knox, June Skeeter, Paul Moore, and other EcoFlux Lab members and affiliates.
 
 Revisions:
+- March 2025: Full documentation added including pipeline features and further information to supplement the tutorial. 
 - February 2025: "Recently Added Features" section 8.3 added. Full documentation still in progress.
 - October 2024: these are the "quick-start" instructions for new users of the data-cleaning pipeline. The full documentation will be made available at a later date. 
 
