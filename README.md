@@ -46,7 +46,8 @@ Revisions:
 
 6. Data Visualization\
 &emsp;6.1 &nbsp;Matlab plotApp\
-&emsp;6.2 &nbsp;R-Shiny App
+&emsp;6.2 &nbsp;R-Shiny App\
+&emsp;6.3 &nbsp;Other Biomet Plotting Tools
 
 7. Troubleshooting and FAQ\
 &emsp;7.1 &nbsp;Recommended Software Versions\
